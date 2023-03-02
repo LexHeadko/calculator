@@ -17,19 +17,15 @@ public class CalculatorController {
     public String plus(@RequestParam("num1") int num1, @RequestParam("num2") int num2) {
 
     }
-    @GetMapping("/plus")
+    @GetMapping("/minus")
     public String plus(@RequestParam("num1") int num1, @RequestParam("num2") int num2) {
 
     }
-    @GetMapping("/plus")
+    @GetMapping("/multiply")
     public String plus(@RequestParam("num1") int num1, @RequestParam("num2") int num2) {
 
     }
-    @GetMapping("/plus")
-    public String plus(@RequestParam("num1") int num1, @RequestParam("num2") int num2) {
-
-    }
-    @GetMapping("/plus")
+    @GetMapping("/divide")
     public String plus(@RequestParam("num1") int num1, @RequestParam("num2") int num2) {
 
     }
