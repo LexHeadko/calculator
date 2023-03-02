@@ -1,10 +1,9 @@
 package com.skypro.calculator.controller;
 
+import com.skypro.calculator.exception.DivisionByZeroException;
 import com.skypro.calculator.service.CalculatorService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/calculator")
@@ -15,6 +14,10 @@ public class CalculatorController {
         this.calculatorService = calculatorService;
     }
 
+    @ExceptionHandler(DivisionByZeroException.class)
+    public ResponseEntity<?> nandleDivisionByZero(DivisionByZeroException e) {
+        return ResponseEntity.badRequest().body("Делить на ноль нельзя!!!");
+    }
     @GetMapping
     public String hello() {
         return "Добро пожаловать в Калькулятор!";
