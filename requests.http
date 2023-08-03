@@ -8,4 +8,4 @@ GET http://localhost:8080/calculator/multiply?num1=34&num2
 ###
 GET http://localhost:8080/calculator/divide?num1=80&num2=70
 ###
-GET http://localhost:8080/calculator/divide?num1=80&num2=0
+GET http://localhost:8080/calculator/divide?num1=80&num2=6
