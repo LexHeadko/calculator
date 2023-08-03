@@ -17,13 +17,23 @@ public class CalculatorServiceTest {
         assertEquals(-8, actual);
     }
     @Test
+    void minusPositive() {
+        double actual = calculatorService.minus(3, 5);
+        assertEquals(-2, actual);
+    }
+    @Test
     void minusNegative() {
         double actual = calculatorService.minus(-3, -5);
         assertEquals(2, actual);
     }
     @Test
-    void minusPositive() {
-        double actual = calculatorService.minus(3, 5);
-        assertEquals(-2, actual);
+    void multiplyPositive() {
+        double actual = calculatorService.multiply(3, 5);
+        assertEquals(15, actual);
+    }
+    @Test
+    void multiplyNegative() {
+        double actual = calculatorService.multiply(-3, -5);
+        assertEquals(15, actual);
     }
 }
