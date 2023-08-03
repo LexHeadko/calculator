@@ -16,4 +16,14 @@ public class CalculatorServiceTest {
         double actual = calculatorService.plus(-3, -5);
         assertEquals(-8, actual);
     }
+    @Test
+    void minusNegative() {
+        double actual = calculatorService.minus(-3, -5);
+        assertEquals(2, actual);
+    }
+    @Test
+    void minusPositive() {
+        double actual = calculatorService.minus(3, 5);
+        assertEquals(-2, actual);
+    }
 }
