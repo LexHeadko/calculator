@@ -36,4 +36,14 @@ public class CalculatorServiceTest {
         double actual = calculatorService.multiply(-3, -5);
         assertEquals(15, actual);
     }
+    @Test
+    void dividePositive() {
+        double actual = calculatorService.divide(15, 5);
+        assertEquals(3, actual);
+    }
+    @Test
+    void divideNegative() {
+        double actual = calculatorService.divide(-15, -5);
+        assertEquals(3, actual);
+    }
 }
