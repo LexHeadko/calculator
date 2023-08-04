@@ -24,4 +24,18 @@ public class ParametrizedCalculatorServiceTest {
     void plus(double n1, double n2, double expected) {
         assertEquals(expected, calculatorService.plus(n1, n2));
     }
+    static Stream<Arguments> dataForMinus() {
+        return Stream.of(
+                Arguments.of(3, 5, -2),
+                Arguments.of(123, 123, 0),
+                Arguments.of(-123, 123, -246),
+                Arguments.of(-111, -111, 0)
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("dataForMinus")
+    void minus(double n1, double n2, double expected) {
+        assertEquals(expected, calculatorService.plus(n1, n2));
+    }
 }
