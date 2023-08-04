@@ -36,6 +36,6 @@ public class ParametrizedCalculatorServiceTest {
     @ParameterizedTest
     @MethodSource("dataForMinus")
     void minus(double n1, double n2, double expected) {
-        assertEquals(expected, calculatorService.plus(n1, n2));
+        assertEquals(expected, calculatorService.minus(n1, n2));
     }
 }
