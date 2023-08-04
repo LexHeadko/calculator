@@ -38,4 +38,18 @@ public class ParametrizedCalculatorServiceTest {
     void minus(double n1, double n2, double expected) {
         assertEquals(expected, calculatorService.minus(n1, n2));
     }
+    static Stream<Arguments> dataForMultiply() {
+        return Stream.of(
+                Arguments.of(3, 5, 15),
+                Arguments.of(12, 12, 144),
+                Arguments.of(-9, 9, -81),
+                Arguments.of(-11, -11, 121)
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("dataForMultiply")
+    void multiply(double n1, double n2, double expected) {
+        assertEquals(expected, calculatorService.multiply(n1, n2));
+    }
 }
