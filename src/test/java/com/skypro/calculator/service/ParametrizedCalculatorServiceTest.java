@@ -52,4 +52,18 @@ public class ParametrizedCalculatorServiceTest {
     void multiply(double n1, double n2, double expected) {
         assertEquals(expected, calculatorService.multiply(n1, n2));
     }
+
+    static Stream<Arguments> data() {
+        return Stream.of(
+                Arguments.of(3, 5),
+                Arguments.of(201,100),
+                Arguments.of(-111,11),
+                Arguments.of(-111,-11));
+    }
+    @ParameterizedTest
+    @MethodSource("data")
+    void divide(double n1, double n2) {
+        double expected = n1 / n2;
+        assertEquals(expected, calculatorService.divide(n1, n2));
+    }
 }
