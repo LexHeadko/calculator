@@ -1,5 +1,6 @@
 package com.skypro.calculator.service;
 
+import com.skypro.calculator.exception.DivisionByZeroException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -45,5 +46,10 @@ public class CalculatorServiceTest {
     void divideNegative() {
         double actual = calculatorService.divide(-15, -5);
         assertEquals(3, actual);
+    }
+
+    @Test
+    void divisionByZero() {
+        assertThrows(DivisionByZeroException.class, () -> calculatorService.divide(10, 0));
     }
 }
